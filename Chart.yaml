@@ -1,0 +1,8 @@
+apiVersion: v1
+description: Helm chart for deploying petclinic
+home: petclinic.k8s-cdp-cluster.tk
+keywords:
+- petclinic
+name: petclinic
+version: 0.0.3
+

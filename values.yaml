@@ -1,0 +1,9 @@
+name: "petclinic"
+namespace: "dev"
+
+petclinic:
+  replicas: "1"
+  imageName: "arey/springboot-petclinic"
+  imageTag: "latest"
+  port: "8080"
+  password: test

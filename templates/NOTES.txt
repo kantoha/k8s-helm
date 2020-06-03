@@ -1,0 +1,18 @@
+Thank you for installing {{ .Chart.Name }}.
+
+Your release is named {{ .Release.Name }}.
+
+To learn more about the release, try:
+
+  $ helm status {{ .Release.Name }}
+  $ helm get all {{ .Release.Name }}
+
+
+To get the password for root user run:
+    export MYSQL_ROOT_PASSWORD=$(kubectl get secret -n {{ .Values.namespace }} mysql-pass-{{.Values.namespace}} -o jsonpath="{.data.password}" | base64 --decode)
+
+To connect to your database use the following endpoint:
+    kubectl get svc -n {{ .Values.namespace }} mysql -o jsonpath="{.metadata.name}{":"}{.spec.ports.port}"
+
+To access petclinic use the following endpoint:
+      kubectl get ingress petclinic -n dev -o=jsonpath='{range .spec.rules[*]}{.host}{end}'
